@@ -16,9 +16,12 @@ public class Main {
         String string = args[0];
         // вариант нахождения количества букв
         String wholeData = new String(Files.readAllBytes(Paths.get(string)));
-        String[] dataArray = wholeData.split("[\\s]+");
+        String[] dataArray = wholeData.split("[\\n\\t\\s]+");
         String string2 = String.join("", dataArray);
         System.out.println(string2.split("").length);
+
+        // второй вариант нахождения количества букв
+        int words = wholeData.split("\\s*(?<!\\d)[-?.!,:;\\s]+|[-?.!,:;\\s]+(?!\\d)\\s*").length;
 
         // вариант когда сохраняем в строку
         String wholeData2 = new String(Files.readAllBytes(Paths.get(string)));
