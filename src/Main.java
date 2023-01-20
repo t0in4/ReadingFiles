@@ -11,8 +11,13 @@ public class Main {
         return new String(Files.readAllBytes(Paths.get(filename)));
     }
     public static void main(String[] args) throws IOException {
+
         // Reading Files
         String string = args[0];
+        // вариант когда сохраняем в строку
+        String wholeData = new String(Files.readAllBytes(Paths.get(string)));
+
+        // вариант когда сохраняем в класс File
         File file = new File("C:\\Users\\user\\IdeaProjects\\ReadingFiles\\" + string);
         Scanner scanner = new Scanner(file);
         String newString = "";
