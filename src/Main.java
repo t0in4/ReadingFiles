@@ -14,8 +14,14 @@ public class Main {
 
         // Reading Files
         String string = args[0];
-        // вариант когда сохраняем в строку
+        // вариант нахождения количества букв
         String wholeData = new String(Files.readAllBytes(Paths.get(string)));
+        String[] dataArray = wholeData.split("[\\s]+");
+        String string2 = String.join("", dataArray);
+        System.out.println(string2.split("").length);
+
+        // вариант когда сохраняем в строку
+        String wholeData2 = new String(Files.readAllBytes(Paths.get(string)));
 
         // вариант когда сохраняем в класс File
         File file = new File("C:\\Users\\user\\IdeaProjects\\ReadingFiles\\" + string);
